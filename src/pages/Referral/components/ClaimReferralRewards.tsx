@@ -19,6 +19,8 @@ export const ClaimReferralRewards = ({ tier }: ClaimReferralRewardsProps) => {
 
   const { claimReferralRewards, loading } = useClaimReferralRewards();
 
+  console.log('rewards', rewards);
+
   useEffect(() => {
     if (success) {
       reloadReferralRewards();
@@ -30,6 +32,8 @@ export const ClaimReferralRewards = ({ tier }: ClaimReferralRewardsProps) => {
       .shiftedBy(-18)
       .isLessThan(minimumClaimAmount);
   }, [rewards]);
+
+  console.log('isLowerThanMinimum', isLowerThanMinimum);
 
   const handleSubmit = async (event: React.MouseEvent) => {
     event.preventDefault();

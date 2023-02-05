@@ -15,6 +15,9 @@ const UpdateTierNotification = ({
   accumulatedVolume
 }: UpdateTierNotificationProps) => {
   const { success, pending } = useGetActiveTransactionsStatus();
+  console.log('success', success);
+  console.log('pending', pending);
+
   const updateAvailable = useMemo(() => {
     return nextTier
       ? accumulatedVolume.isGreaterThanOrEqualTo(nextTier.minVolume)
