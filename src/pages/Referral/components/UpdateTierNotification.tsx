@@ -15,8 +15,6 @@ const UpdateTierNotification = ({
   accumulatedVolume
 }: UpdateTierNotificationProps) => {
   const { success, pending } = useGetActiveTransactionsStatus();
-  console.log('success', success);
-  console.log('pending', pending);
 
   const updateAvailable = useMemo(() => {
     return nextTier
@@ -41,6 +39,10 @@ const UpdateTierNotification = ({
       console.log('processClaimRewardsTransaction error', err);
     }
   };
+
+  console.log('success', success);
+  console.log('pending', pending);
+  console.log('loading', loading);
 
   return updateAvailable ? (
     <div
