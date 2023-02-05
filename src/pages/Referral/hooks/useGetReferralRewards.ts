@@ -7,7 +7,9 @@ export const useGetReferralRewards = () => {
   const { data, refetch } = useQuery(REFERRAL_INFO);
 
   return React.useMemo(() => {
-    const rewards = data?.referralRewards as ReferralRewards | undefined;
+    const rewards = data?.accountReferralInfo?.referralRewards as
+      | ReferralRewards
+      | undefined;
 
     return {
       rewards,
